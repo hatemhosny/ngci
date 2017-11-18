@@ -1,0 +1,33 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:6.12.0-browsers
+
+    # parallelism: 4
+    working_directory: ~/nxci
+
+    steps:
+      - checkout
+
+      - run:
+          name: install-dependencies
+          command: npm install
+
+      - run:
+          name: angular-build
+          command: npm run build:aot
+
+      - run:
+          name: angular-test
+          command: npm test -- --watch=false
+
+
+      - run:
+          name: angular-lint
+          command: npm run lint

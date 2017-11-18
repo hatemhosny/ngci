@@ -6,7 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "build:aot": "ng build --prod --aot",
+    "test": "ng test -sr",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
