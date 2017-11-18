@@ -21,7 +21,7 @@ jobs:
 
       - run:
           name: angular-build
-          command: npm run build:aot
+          command: npm run build
 
       - run:
           name: angular-test
